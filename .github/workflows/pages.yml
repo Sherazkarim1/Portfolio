@@ -1,4 +1,5 @@
 name: Deploy site
+# Redeploy after Pages source was set to GitHub Actions.
 on:
   push:
     branches: [main]
