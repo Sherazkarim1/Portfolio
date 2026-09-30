@@ -1,0 +1,226 @@
+@import 'tailwindcss';
+
+/* ============================================================
+   DESIGN TOKENS — bespoke "Infrastructure" theme
+   A warm-ink / signal-lime system built for a DevOps portfolio.
+   Near-black warm paper, hairline rules, one saturated accent
+   used sparingly for wayfinding and emphasis.
+   ============================================================ */
+
+@theme {
+  /* --- Typefaces --- */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Inter Tight', 'Inter', ui-sans-serif, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  /* --- Core surfaces: warm near-black, never blue-black --- */
+  --color-background: oklch(15.5% 0.006 65);
+  --color-foreground: oklch(97% 0.004 85);
+
+  /* Recursive layers used by cards, sheets, popovers */
+  --color-card: oklch(18.5% 0.007 65);
+  --color-card-foreground: oklch(97% 0.004 85);
+  --color-popover: oklch(17% 0.007 65);
+  --color-popover-foreground: oklch(97% 0.004 85);
+  --color-muted: oklch(22% 0.008 65);
+  --color-muted-foreground: oklch(66% 0.012 70);
+
+  /* Warm neutral for borders — the "paper" tint keeps greys alive */
+  --color-border: oklch(27% 0.009 65);
+  --color-input: oklch(27% 0.009 65);
+  --color-ring: oklch(78% 0.16 130);
+
+  /* --- Accent: signal lime. Used only for wayfinding. --- */
+  --color-primary: oklch(80% 0.17 125);
+  --color-primary-foreground: oklch(17% 0.02 125);
+
+  /* Secondary is a quiet slate — never a second hue */
+  --color-secondary: oklch(24% 0.009 65);
+  --color-secondary-foreground: oklch(95% 0.004 85);
+
+  /* Destructive + a warm amber for the 5.0 rating */
+  --color-destructive: oklch(63% 0.19 25);
+  --color-amber-rating: oklch(80% 0.15 78);
+
+  /* --- Typography scale: tighter tracking as size grows --- */
+  --text-display: 4.75rem;
+  --text-display--line-height: 0.92;
+  --text-display--letter-spacing: -0.035em;
+  --text-display--font-weight: 600;
+
+  --text-title: 3.25rem;
+  --text-title--line-height: 1;
+  --text-title--letter-spacing: -0.03em;
+  --text-title--font-weight: 600;
+
+  --text-headline: 1.75rem;
+  --text-headline--line-height: 1.15;
+  --text-headline--letter-spacing: -0.02em;
+  --text-headline--font-weight: 600;
+
+  --text-lead: 1.0625rem;
+  --text-lead--line-height: 1.65;
+  --text-lead--font-weight: 400;
+
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.7;
+
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.5;
+
+  --text-micro: 0.6875rem;
+  --text-micro--line-height: 1.4;
+  --text-micro--letter-spacing: 0.14em;
+
+  /* --- Radii: restrained. Large radii read as generic AI output. --- */
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  /* --- Elevation: tight, low-spread, tinted with the surface hue --- */
+  --shadow-subtle: 0 1px 2px oklch(0% 0 0 / 0.4);
+  --shadow-soft: 0 4px 16px -4px oklch(0% 0 0 / 0.45);
+  --shadow-lift: 0 16px 40px -12px oklch(0% 0 0 / 0.6);
+
+  /* --- Motion --- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.3, 0.64, 1);
+
+  /* --- Layout rhythm --- */
+  --spacing-section: 7.5rem;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklch, var(--color-primary) 26%, transparent);
+    color: var(--color-foreground);
+  }
+
+  /* A single, consistent focus treatment across the whole app */
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+    border-radius: var(--radius-xs);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer utilities {
+  /* Fluid display sizes that respect the token scale */
+  .text-display {
+    font-size: clamp(2.75rem, 7.5vw, 4.75rem);
+  }
+
+  .text-title {
+    font-size: clamp(2rem, 4.6vw, 3.25rem);
+  }
+
+  .text-headline {
+    font-size: clamp(1.375rem, 2.6vw, 1.75rem);
+  }
+
+  /* Editorial eyebrow: mono, uppercase, wide-tracked */
+  .label-micro {
+    font-family: var(--font-mono);
+    font-size: var(--text-micro);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  .text-muted {
+    color: var(--color-muted-foreground);
+  }
+
+  /* Fine hairline used to separate editorial columns */
+  .rule {
+    border-top: 1px solid var(--color-border);
+  }
+
+  /* Fades the marquee into the page instead of hard-clipping it */
+  .mask-edges {
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #000 5%,
+      #000 95%,
+      transparent
+    );
+    mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  }
+
+  .pause-on-hover:hover > * {
+    animation-play-state: paused;
+  }
+}
+
+/* Marquee loops: each track renders its items twice, so a -50%
+   translate lands exactly on the seam. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
