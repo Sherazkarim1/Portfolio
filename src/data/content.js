@@ -51,10 +51,10 @@ export const CAPABILITIES = [
     stack: ['Kubernetes', 'Terraform', 'Databricks', 'Snowflake'],
   },
   {
-    title: 'AI & Cloud Architecture',
+    title: 'AI Platform Architecture',
     summary:
-      'Designing the underlying platform — multi-cloud topology, data layers, secure enclaves, and CI/CD — so AI systems stay reliable after they ship.',
-    stack: ['AWS', 'Azure', 'ArgoCD', 'Observability'],
+      'Designing the underlying platform — deployment topology, data layers, secure enclaves, and CI/CD — so AI systems stay reliable after they ship.',
+    stack: ['Kubernetes', 'ArgoCD', 'Observability', 'IaC'],
   },
   {
     title: 'AI Security & Governance',
@@ -68,13 +68,13 @@ export const HERO = {
   eyebrow: 'AI Systems Engineer',
   heading: ['I’m Sheraz, an', 'AI Systems Engineer'],
   subtext:
-    'I design, build, and ship production AI systems — agentic workflows, RAG and GraphRAG knowledge layers, and LLM applications — then deploy them on AWS, Azure, and Kubernetes with the CI/CD pipelines to keep them running.',
+    'I design, build, and ship production AI systems — agentic workflows, RAG and GraphRAG knowledge layers, and LLM applications — then deploy them on containerized infrastructure with the CI/CD pipelines to keep them running.',
 }
 
 export const SIDEBAR = [
   {
     title: 'About Me',
-    body: 'AI Systems Engineer working across AWS, Azure, and Kubernetes, with 7+ years spanning MLOps, DevOps, and full-stack delivery. I build autonomous AI agents, retrieval-augmented systems, and the infrastructure that serves them in production.',
+    body: 'AI Systems Engineer working across containerized platforms and Kubernetes, with 7+ years spanning MLOps, DevOps, and full-stack delivery. I build autonomous AI agents, retrieval-augmented systems, and the infrastructure that serves them in production.',
     cta: 'Learn more',
     href: '#about',
   },
@@ -115,7 +115,7 @@ export const PORTFOLIO = {
   tag: '/ Work portfolio',
   heading: 'Client reviews',
   subtext:
-    '5.0-star feedback from Upwork and Fiverr — AI agents, RAG systems, MLOps, and cloud engagements.',
+    '5.0-star feedback from Upwork and Fiverr — AI agents, RAG systems, LLMOps, and infrastructure engagements.',
 }
 
 /** Single-line headline ticker, duplicated once for a seamless loop. */
