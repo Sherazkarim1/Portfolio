@@ -129,17 +129,19 @@ export function Hero() {
         {/* ---- Centre: portrait, deliberately off-axis ---- */}
         <div className="order-first lg:order-none lg:col-span-3 lg:col-start-8">
           <figure className="relative mx-auto max-w-[300px] lg:mx-0 lg:ml-auto">
-            {/* Offset hairline frame — a print-like registration mark */}
+            {/* Registration mark — top + right only. A full rectangle would
+                cut across the subject's shoulder, since the cutout fills the
+                frame edge-to-edge where the old bordered photo contained it. */}
             <span
               aria-hidden="true"
-              className="absolute -right-3 -top-3 hidden h-full w-full rounded-sm border border-border/70 lg:block"
+              className="absolute -right-3 -top-3 hidden h-full w-full border-r border-t border-border/70 lg:block"
             />
             <img
               src="profile.png"
               alt="Sheraz Karim"
-              width="369"
-              height="676"
-              className="relative w-full rounded-sm border border-border object-cover object-top grayscale-[0.15]"
+              width="500"
+              height="620"
+              className="relative w-full"
             />
             <figcaption className="relative mt-4 flex items-center justify-between border-t border-border pt-3">
               <span className="label-micro text-muted-foreground">
