@@ -12,7 +12,7 @@
 
 export const PROFILE = {
   name: 'Sheraz Karim',
-  location: 'Gilgit, Pakistan',
+  location: 'Remote',
 }
 
 /** Ordered by specificity — the marquee reads best most-specific-first. */
