@@ -22,11 +22,46 @@ export const PROFILE = {
 export const SPECIALITIES = [
   'AI Agents & Autonomous Workflows',
   'RAG & GraphRAG Knowledge Systems',
-  'LLM Application Architecture',
+  'LLMOps & Model Deployment',
   'AI Chatbots & Copilots',
-  'MLOps & Model Deployment',
+  'MLOps & Data Platforms',
   'AWS · Databricks · Snowflake',
   'CI/CD & Kubernetes',
+]
+
+/**
+ * Service areas, mapped to the roles with durable demand.
+ *
+ * Deliberately NOT led by "prompt engineering" as a standalone service:
+ * dedicated prompt-engineering roles collapsed as a separate title once
+ * prompt skills became a baseline expectation for every AI engineer.
+ * Prompting is kept as a technique inside AI Agent Engineering instead.
+ */
+export const CAPABILITIES = [
+  {
+    title: 'AI Agent Engineering',
+    summary:
+      'Multi-agent orchestration, tool-calling chains, state and memory management, failure recovery, and eval harnesses for autonomous workflows in production.',
+    stack: ['LangGraph', 'RAG', 'Evals', 'Guardrails'],
+  },
+  {
+    title: 'LLMOps & MLOps',
+    summary:
+      'Model deployment, versioning, drift and cost monitoring, inference serving, and retraining pipelines on Kubernetes and managed cloud runtimes.',
+    stack: ['Kubernetes', 'Terraform', 'Databricks', 'Snowflake'],
+  },
+  {
+    title: 'AI & Cloud Architecture',
+    summary:
+      'Designing the underlying platform — multi-cloud topology, data layers, secure enclaves, and CI/CD — so AI systems stay reliable after they ship.',
+    stack: ['AWS', 'Azure', 'ArgoCD', 'Observability'],
+  },
+  {
+    title: 'AI Security & Governance',
+    summary:
+      'Securing LLM applications against prompt injection and data leakage, with the access controls and auditability enterprise buyers now require.',
+    stack: ['Guardrails', 'IAM', 'Red Teaming', 'Compliance'],
+  },
 ]
 
 export const HERO = {
@@ -73,6 +108,7 @@ export const ABOUT = {
     { value: '100%', label: ['Job Success', 'on Upwork'] },
     { value: '17+', label: ['Projects &', 'Engagements'] },
   ],
+  badges: ['Top Rated', '100% Job Success'],
 }
 
 export const PORTFOLIO = {

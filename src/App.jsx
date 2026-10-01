@@ -1,5 +1,6 @@
 import { SiteHeader } from './components/site-header'
 import { Hero } from './components/hero'
+import { Capabilities } from './components/capabilities'
 import { About } from './components/about'
 import { Portfolio } from './components/portfolio'
 
@@ -17,6 +18,7 @@ export default function App() {
 
       <main id="main">
         <Hero />
+        <Capabilities />
         <About />
         <Portfolio />
       </main>
