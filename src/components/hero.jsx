@@ -1,4 +1,5 @@
 import { ArrowDown, ArrowUpRight, Check } from 'lucide-react'
+import profileImg from '../assets/profile.png'
 import { HERO, PROFILE, SIDEBAR, SOCIALS, SPECIALITIES } from '../data/content'
 import { Badge } from './ui/badge'
 
@@ -137,7 +138,7 @@ export function Hero() {
               className="absolute -right-3 -top-3 hidden h-full w-full border-r border-t border-border/70 lg:block"
             />
             <img
-              src="profile.png"
+              src={profileImg}
               alt="Sheraz Karim"
               width="500"
               height="620"
