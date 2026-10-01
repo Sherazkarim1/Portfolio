@@ -12,10 +12,7 @@
 
 export const PROFILE = {
   name: 'Sheraz Karim',
-  role: 'AI Systems Engineer',
   location: 'Gilgit, Pakistan',
-  /** Kept in sync with the LinkedIn / Upwork tagline. */
-  yearsExperience: 7,
 }
 
 /** Ordered by specificity — the marquee reads best most-specific-first. */

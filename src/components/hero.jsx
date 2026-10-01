@@ -113,7 +113,7 @@ export function Hero() {
 
             <a
               href="#portfolio"
-              className="scroll-cue group inline-flex items-center gap-2.5 text-caption text-muted-foreground transition-colors duration-200 hover:text-foreground"
+              className="group inline-flex items-center gap-2.5 text-caption text-muted-foreground transition-colors duration-200 hover:text-foreground"
             >
               <span className="relative flex h-9 w-9 items-center justify-center rounded-full border border-border transition-colors duration-300 group-hover:border-primary/50">
                 <ArrowDown

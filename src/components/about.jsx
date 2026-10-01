@@ -1,5 +1,6 @@
 import { ABOUT } from '../data/content'
 import { useReveal } from '../hooks/use-reveal'
+import { Badge } from './ui/badge'
 
 export function About() {
   const [ref, visible] = useReveal(0.15)
@@ -23,6 +24,15 @@ export function About() {
               <br />
               {ABOUT.heading[1]}
             </h2>
+            <ul className="mt-7 flex flex-wrap gap-2">
+              {ABOUT.badges.map((badge) => (
+                <li key={badge}>
+                  <Badge variant="outline" size="sm">
+                    {badge}
+                  </Badge>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Stats sit on one hairline baseline — no cards, no boxes */}
