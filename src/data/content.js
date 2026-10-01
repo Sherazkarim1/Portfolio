@@ -1,25 +1,51 @@
 /**
- * Content, transcribed verbatim from the original index.html.
- * Copy is intentionally unchanged — this file only relocates it
- * so the presentation layer can be reworked independently.
+ * Canonical content — single source of truth.
+ *
+ * Positioning is aligned across LinkedIn / GitHub / Upwork / this site:
+ *   Core identity .... AI Systems Engineer
+ *   Supporting ....... MLOps, DevOps, Full-Stack, AI Agents, RAG
+ *   Proof points ..... 7+ years, 100% Job Success, Top Rated
+ *
+ * Titles are deliberately NOT identical across platforms — each one is
+ * optimised for how that platform is searched. The facts must match.
  */
 
+export const PROFILE = {
+  name: 'Sheraz Karim',
+  role: 'AI Systems Engineer',
+  location: 'Gilgit, Pakistan',
+  /** Kept in sync with the LinkedIn / Upwork tagline. */
+  yearsExperience: 7,
+}
+
+/** Ordered by specificity — the marquee reads best most-specific-first. */
+export const SPECIALITIES = [
+  'AI Agents & Autonomous Workflows',
+  'RAG & GraphRAG Knowledge Systems',
+  'LLM Application Architecture',
+  'AI Chatbots & Copilots',
+  'MLOps & Model Deployment',
+  'AWS · Databricks · Snowflake',
+  'CI/CD & Kubernetes',
+]
+
 export const HERO = {
-  heading: ['I’m Sheraz, a', 'DevOps Engineer'],
+  eyebrow: 'AI Systems Engineer',
+  heading: ['I’m Sheraz, an', 'AI Systems Engineer'],
   subtext:
-    'I build and manage cloud infrastructure across AWS and Azure, automate CI/CD pipelines, and keep production systems running from Kubernetes deployments to enterprise-scale endpoint management.',
+    'I design, build, and ship production AI systems — agentic workflows, RAG and GraphRAG knowledge layers, and LLM applications — then deploy them on AWS, Azure, and Kubernetes with the CI/CD pipelines to keep them running.',
 }
 
 export const SIDEBAR = [
   {
     title: 'About Me',
-    body: 'DevOps Engineer at Cloudlem, working across AWS, Azure, and Kubernetes. I also take on independent contract work spanning enterprise systems administration, multi-cloud deployments, and CI/CD automation.',
+    body: 'AI Systems Engineer working across AWS, Azure, and Kubernetes, with 7+ years spanning MLOps, DevOps, and full-stack delivery. I build autonomous AI agents, retrieval-augmented systems, and the infrastructure that serves them in production.',
     cta: 'Learn more',
     href: '#about',
   },
   {
     title: 'My Work',
-    body: 'From automating enterprise SCCM deployments across 6,000+ servers to building GitOps pipelines with ArgoCD and Kubernetes, here’s a look at what I’ve shipped.',
+    body: 'From enterprise SCCM deployments across 6,000+ servers to GitOps pipelines with ArgoCD and Kubernetes, RAG knowledge systems, and AI agent workflows — here’s a look at what I’ve shipped.',
     cta: 'Browse portfolio',
     href: '#portfolio',
   },
@@ -41,9 +67,10 @@ export const SOCIALS = [
 
 export const ABOUT = {
   tag: '/ About me',
-  heading: ['I’ve been developing', 'for many years'],
+  heading: ['Seven years of', 'building for production'],
   stats: [
-    { value: '5+', label: ['Years of', 'Experience'] },
+    { value: '7+', label: ['Years of', 'Experience'] },
+    { value: '100%', label: ['Job Success', 'on Upwork'] },
     { value: '17+', label: ['Projects &', 'Engagements'] },
   ],
 }
@@ -52,7 +79,7 @@ export const PORTFOLIO = {
   tag: '/ Work portfolio',
   heading: 'Client reviews',
   subtext:
-    '5.0-star feedback from Upwork and Fiverr — DevOps, cloud, and AI engagements.',
+    '5.0-star feedback from Upwork and Fiverr — AI agents, RAG systems, MLOps, and cloud engagements.',
 }
 
 /** Single-line headline ticker, duplicated once for a seamless loop. */

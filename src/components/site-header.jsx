@@ -50,7 +50,7 @@ export function SiteHeader() {
         >
           Sheraz Karim
           <span className="label-micro text-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            / DevOps
+            / AI Systems
           </span>
         </a>
 

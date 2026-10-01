@@ -1,5 +1,5 @@
-import { ArrowDown, ArrowUpRight } from 'lucide-react'
-import { HERO, SIDEBAR, SOCIALS } from '../data/content'
+import { ArrowDown, ArrowUpRight, Check } from 'lucide-react'
+import { HERO, PROFILE, SIDEBAR, SOCIALS, SPECIALITIES } from '../data/content'
 import { Badge } from './ui/badge'
 
 /* Brand marks are no longer shipped in lucide, so these two stay
@@ -66,7 +66,7 @@ export function Hero() {
           <div className="flex items-center gap-3">
             <span className="h-px w-8 bg-primary" aria-hidden="true" />
             <span className="label-micro text-muted-foreground">
-              DevOps Engineer
+              {HERO.eyebrow}
             </span>
           </div>
 
@@ -79,6 +79,22 @@ export function Hero() {
           <p className="mt-7 max-w-[46ch] text-lead text-muted-foreground">
             {HERO.subtext}
           </p>
+
+          {/* Specialities — a compact keyword rail, not a cloud of pills */}
+          <ul className="mt-9 flex flex-wrap gap-x-6 gap-y-3">
+            {SPECIALITIES.map((item) => (
+              <li
+                key={item}
+                className="flex items-center gap-2 text-caption text-muted-foreground"
+              >
+                <Check
+                  className="size-3.5 shrink-0 text-primary"
+                  strokeWidth={2.25}
+                />
+                {item}
+              </li>
+            ))}
+          </ul>
 
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
             <a
@@ -127,7 +143,7 @@ export function Hero() {
             />
             <figcaption className="relative mt-4 flex items-center justify-between border-t border-border pt-3">
               <span className="label-micro text-muted-foreground">
-                Cloudlem
+                {PROFILE.location}
               </span>
               <Badge variant="accent" size="sm">
                 Available
